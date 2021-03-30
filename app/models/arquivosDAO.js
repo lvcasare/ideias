@@ -21,6 +21,12 @@ arquivosDAO.prototype.pagamentos = function (callback){
 
 }
 
+arquivosDAO.prototype.del = function (get,callback){ 
+    this._connection.query('DELETE FROM arquivos WHERE id = '+get.id, callback);
+
+}
+
+
 
 module.exports = function (){
     return arquivosDAO;//

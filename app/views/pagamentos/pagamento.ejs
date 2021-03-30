@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>Construa sua Casa - Ideias</title>
+    <title>Construa sua Casa - Ideias/title>
   </head>
   <body>
 
@@ -102,10 +102,11 @@
                 <% } else {%> 
                   <a class="btn btn-warning" href="/pagamento/upload?id=<%= pagamentos[i].id%>&pedidoid=<%= pagamentos[i].pedidoid%>"> Enviar</a>
                 <% }%>
-                
-              
-            
             </td>
+            <td class="text-center">
+              <a class="btn btn-danger" href="/pagdel?id=<%= pagamentos[i].id%>&total=<%= get.total%>&pedidoid=<%= get.id%>"> Excluir</a>
+                             
+              </td> 
                 
             </tr>
             <%}%>

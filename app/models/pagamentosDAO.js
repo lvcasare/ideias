@@ -1,3 +1,4 @@
+const { get } = require("../../config/server");
 
 function pagamentosDAO(connection){
     this._connection = connection;
@@ -18,6 +19,11 @@ pagamentosDAO.prototype.updateUpload = function (id, z,callback){
 
 pagamentosDAO.prototype.pagamentos = function (callback){ 
     this._connection.query('SELECT * FROM pagamentos ', callback);
+
+}
+
+pagamentosDAO.prototype.del = function (get,callback){ 
+    this._connection.query('DELETE FROM pagamentos WHERE id = '+get.id, callback);
 
 }
 

@@ -26,6 +26,11 @@ module.exports = function (application){
         
     });
 
+    application.get('/arqdel', function (req,res){
+        application.app.controllers.arquivo.del(application,req,res);
+        
+    });
+
   
 
 

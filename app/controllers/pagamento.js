@@ -89,6 +89,16 @@ module.exports.pagamentos = function(application, req, res){
     pagamentoModel.pagamentos(callback);
 }
 
+module.exports.del = function(application, req, res){
+    var get=req.query;
+    var connection = application.config.dbConnection();
+    var pagamentoModel = new application.app.models.pagamentosDAO(connection);
+    var callback = function(erro,result){
+        res.redirect('/pagamento?id='+get.pedidoid+'&total='+get.total);
+        };        
+        pagamentoModel.del(get,callback)
+}
+
 
        
      

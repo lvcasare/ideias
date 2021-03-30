@@ -90,15 +90,21 @@
               <td class="text-center"><%= pagamentos[i].obs%></td>
               <td class="text-center">
                 <% if (pagamentos[i].img==1) {%> 
-                  <a class="btn btn-primary" href="/arq/<%= pagamentos[i].id%>.<%= pagamentos[i].tipo%>"> 
+                  <a style="margin-right: 5px;" class="btn btn-primary" href="/arq/<%= pagamentos[i].id%>.<%= pagamentos[i].tipo%>"> Arquivo</a>
+                    <a class="btn btn-warning" href="/arquivo/upload?id=<%= pagamentos[i].id%>&pedidoid=<%= pagamentos[i].pedidoid%>"> Enviar</a>
+
                     
                 <% } else {%> 
-                  <a class="btn btn-warning" href="/arquivo/upload?id=<%= pagamentos[i].id%>&pedidoid=<%= pagamentos[i].pedidoid%>"> 
+                  <a class="btn btn-warning" href="/arquivo/upload?id=<%= pagamentos[i].id%>&pedidoid=<%= pagamentos[i].pedidoid%>"> Enviar</a>
                 <% }%>
 
-              Arquivo</a>
+              
             
             </td>
+            <td class="text-center">
+              <a class="btn btn-danger" href="/arqdel?id=<%= pagamentos[i].id%>&total=<%= get.total%>&pedidoid=<%= get.id%>"> Excluir
+                             
+              </td> 
                 
             </tr>
             <%}%>

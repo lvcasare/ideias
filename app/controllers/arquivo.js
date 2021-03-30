@@ -90,6 +90,16 @@ module.exports.arquivos = function(application, req, res){
     pagamentoModel.pagamentos(callback);
 }
 
+module.exports.del = function(application, req, res){
+    var get=req.query;
+    var connection = application.config.dbConnection();
+    var arquivosModel = new application.app.models.arquivosDAO(connection);
+    var callback = function(erro,result){
+        res.redirect('/arquivo?id='+get.pedidoid+'&total='+get.total);
+        };        
+        arquivosModel.del(get,callback)
+}
+
 
        
      

@@ -31,6 +31,11 @@ module.exports = function (application){
         
     });
 
+    application.get('/pagdel', function (req,res){
+        application.app.controllers.pagamento.del(application,req,res);
+        
+    });
+
 
 
 }
